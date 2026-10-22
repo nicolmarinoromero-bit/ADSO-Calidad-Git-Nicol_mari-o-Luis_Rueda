@@ -7,7 +7,7 @@
 
 ## Objetivo
 
-Aplicar prácticas de aseguramiento de calidad mediante el uso colaborativo de Git y GitHub. El equipo organizará los cambios con ramas, registrará el trabajo en commits atómicos y revisará las contribuciones mediante Pull Requests antes de integrarlas a `main`.
+Aplicar prácticas de aseguramiento de calidad mediante el uso colaborativo de Git y GitHub. El equipo organizará los cambios con ramas, registrará el trabajo en commits atómicos y revisará las contribuciones mediante Pull Requests antes de integrarlas a `master`.
 
 ## Repositorio
 
@@ -45,23 +45,9 @@ print(generar_resumen(usuarios))
    - `feature/modulo-registro`
    - `feature/modulo-reportes`
 4. Realizar al menos tres commits atómicos en cada rama. Usar mensajes claros con convenciones como `feat:`, `fix:` y `docs:`.
-5. Abrir un Pull Request de cada rama hacia `main`, describiendo el aporte.
+5. Abrir un Pull Request de cada rama hacia `master`, describiendo el aporte.
 6. Revisar los cambios del compañero, dejar comentarios de mejora cuando corresponda y aprobar los PR antes de fusionarlos.
 7. Provocar y resolver un conflicto en un archivo compartido, por ejemplo `README.md`, y conservar el commit que registra la resolución.
-
-## Uso de la calculadora
-
-La calculadora está implementada en `calculadora.py` y permite sumar, restar, multiplicar, dividir y calcular porcentajes. Requiere Python 3.
-
-Para ejecutarla desde la carpeta del repositorio:
-
-```bash
-python calculadora.py
-```
-
-Selecciona una opción del menú e ingresa los dos números solicitados. Para calcular un porcentaje, selecciona la opción `5`; por ejemplo, ingresa `200` como primer número y `15` como segundo para obtener `30.0`.
-
-La división entre cero muestra un mensaje de error.
 
 ## Diagrama del flujo de ramas
 
@@ -74,18 +60,18 @@ gitGraph
    commit id: "feat: agregar módulo"
    commit id: "fix: corregir validación"
    commit id: "docs: documentar módulo"
-   checkout main
+   checkout master
    merge feature/modulo-registro id: "PR revisado"
    branch feature/modulo-reportes
    commit id: "feat: agregar módulo"
    commit id: "fix: corregir salida"
    commit id: "docs: documentar módulo"
-   checkout main
+   checkout master
    merge feature/modulo-reportes id: "PR revisado"
 ```
 
 ## Entregable
 
-Entregar el enlace al repositorio público de GitHub con el diagrama de red visible, al menos dos ramas fusionadas en `main` y el registro de Pull Requests aprobados.
+Entregar el enlace al repositorio público de GitHub con el diagrama de red visible, al menos dos ramas fusionadas en `master` y el registro de Pull Requests aprobados.
 
 Repositorio: [ADSO-Calidad-Git-Nicol_mari-o-Luis_Rueda](https://github.com/nicolmarinoromero-bit/ADSO-Calidad-Git-Nicol_mari-o-Luis_Rueda)
