@@ -19,7 +19,7 @@ def listar_usuarios(usuarios):
 def contar_por_dominio(usuarios):
     conteo = {}
     for datos in usuarios.values():
-        dominio = datos["correo"].split("@")[-1]
+        dominio = datos["correo"].strip().rsplit("@", 1)[-1].lower()
         conteo[dominio] = conteo.get(dominio, 0) + 1
     return conteo
 
