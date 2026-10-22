@@ -7,9 +7,9 @@ def validar_documento(documento):
 
 
 def validar_correo(correo):
-    if "@" not in correo:
+    if correo.count("@") != 1:
         return False
-    usuario, dominio = correo.split("@", 1)
+    usuario, dominio = correo.split("@")
     return (
         bool(usuario)
         and "." in dominio
@@ -19,8 +19,15 @@ def validar_correo(correo):
 
 
 def registrar_usuario(usuarios, documento, nombre, correo):
+    documento = documento.strip()
+    nombre = nombre.strip()
+    correo = correo.strip().lower()
+    if documento in usuarios:
+        raise ValueError("Ya existe un usuario con ese documento")
     if not validar_documento(documento):
         raise ValueError("El documento debe tener al menos 6 dígitos")
+    if not nombre:
+        raise ValueError("El nombre no puede estar vacío")
     if not validar_correo(correo):
         raise ValueError("El correo no es válido")
     usuarios[documento] = {"nombre": nombre, "correo": correo}
