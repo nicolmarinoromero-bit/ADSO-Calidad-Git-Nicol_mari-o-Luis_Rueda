@@ -18,6 +18,13 @@ def validar_correo(correo):
     )
 
 
+def buscar_usuario(usuarios, documento):
+    documento = documento.strip()
+    if documento not in usuarios:
+        raise ValueError("No existe un usuario con ese documento")
+    return usuarios[documento]
+
+
 def registrar_usuario(usuarios, documento, nombre, correo):
     documento = documento.strip()
     nombre = nombre.strip()
