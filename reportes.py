@@ -3,20 +3,23 @@
 
 
 def listar_usuarios(usuarios):
-    return [
-        {
-            "documento": documento,
-            "nombre": datos["nombre"],
-            "correo": datos["correo"],
-        }
-        for documento, datos in usuarios.items()
-    ]
+    return sorted(
+        (
+            {
+                "documento": documento,
+                "nombre": datos["nombre"],
+                "correo": datos["correo"],
+            }
+            for documento, datos in usuarios.items()
+        ),
+        key=lambda usuario: usuario["nombre"].lower(),
+    )
 
 
 def contar_por_dominio(usuarios):
     conteo = {}
     for datos in usuarios.values():
-        dominio = datos["correo"].split("@")[0]
+        dominio = datos["correo"].split("@")[-1]
         conteo[dominio] = conteo.get(dominio, 0) + 1
     return conteo
 
