@@ -3,7 +3,7 @@
 
 
 def validar_documento(documento):
-    return documento.isdigit() and len(documento) >= 5
+    return documento.isdigit() and len(documento) >= 6
 
 
 def validar_correo(correo):
