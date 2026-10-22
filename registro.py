@@ -7,14 +7,18 @@ def validar_documento(documento):
 
 
 def validar_correo(correo):
-    if correo.count("@") != 1:
+    if correo.count("@") != 1 or any(caracter.isspace() for caracter in correo):
         return False
     usuario, dominio = correo.split("@")
     return (
         bool(usuario)
         and "." in dominio
+        and not usuario.startswith(".")
+        and not usuario.endswith(".")
+        and ".." not in usuario
         and not dominio.startswith(".")
         and not dominio.endswith(".")
+        and ".." not in dominio
     )
 
 
