@@ -10,6 +10,9 @@ def restar(a, b):
 def multiplicar(a, b):
     return a * b
 
+def porcentaje(numero, tasa):
+    return numero * tasa / 100
+
 def dividir(a, b):
     if b == 0:
         raise ZeroDivisionError("No se puede dividir por cero")
@@ -21,9 +24,10 @@ def main():
     print("2. Restar")
     print("3. Multiplicar")
     print("4. Dividir")
+    print("5. Calcular porcentaje")
     
     try:
-        opcion = input("Seleccione una opción (1-4): ")
+        opcion = input("Seleccione una opción (1-5): ")
         num1 = float(input("Ingrese el primer número: "))
         num2 = float(input("Ingrese el segundo número: "))
         
@@ -35,6 +39,8 @@ def main():
             print(f"Resultado: {multiplicar(num1, num2)}")
         elif opcion == "4":
             print(f"Resultado: {dividir(num1, num2)}")
+        elif opcion == "5":
+            print(f"Resultado: {porcentaje(num1, num2)}")
         else:
             print("Opción inválida")
     except ValueError:
