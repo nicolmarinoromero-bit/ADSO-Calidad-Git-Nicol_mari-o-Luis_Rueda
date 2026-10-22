@@ -24,6 +24,19 @@ usuarios = {}
 registrar_usuario(usuarios, "123456", "Ana Pérez", "ana@example.com")
 ```
 
+## Módulo de reportes
+
+El archivo `reportes.py` genera reportes de los usuarios registrados. Lista los usuarios ordenados por nombre, cuenta cuántos pertenecen a cada dominio de correo y produce un resumen con el total.
+
+```python
+from registro import registrar_usuario
+from reportes import generar_resumen
+
+usuarios = {}
+registrar_usuario(usuarios, "123456", "Ana Pérez", "ana@example.com")
+print(generar_resumen(usuarios))
+```
+
 ## Actividades requeridas
 
 1. Configurar un `.gitignore` que excluya registros, binarios, archivos temporales, entornos virtuales y archivos sensibles como `.env`.
