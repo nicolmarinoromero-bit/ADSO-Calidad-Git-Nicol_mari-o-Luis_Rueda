@@ -15,14 +15,17 @@ La guía propone el formato `ADSO-Calidad-Git-[Pareja]` para el nombre del repos
 
 ## Módulo de registro
 
-El archivo `registro.py` implementa el registro de usuarios en memoria. Valida que el documento tenga al menos seis dígitos, verifica el formato del correo y evita documentos duplicados.
+El archivo `registro.py` implementa el registro de usuarios en memoria. Valida que el documento tenga al menos seis dígitos, verifica el formato del correo y evita documentos duplicados. También permite buscar un usuario por su documento.
 
 ```python
-from registro import registrar_usuario
+from registro import buscar_usuario, registrar_usuario
 
 usuarios = {}
 registrar_usuario(usuarios, "123456", "Ana Pérez", "ana@example.com")
+print(buscar_usuario(usuarios, "123456"))
 ```
+
+`buscar_usuario` lanza un `ValueError` si el documento no está registrado.
 
 ## Módulo de reportes
 
@@ -49,19 +52,9 @@ print(generar_resumen(usuarios))
 6. Revisar los cambios del compañero, dejar comentarios de mejora cuando corresponda y aprobar los PR antes de fusionarlos.
 7. Provocar y resolver un conflicto en un archivo compartido, por ejemplo `README.md`, y conservar el commit que registra la resolución.
 
-## Uso de la calculadora
+## Requisitos
 
-La calculadora está implementada en `calculadora.py` y permite sumar, restar, multiplicar, dividir y calcular porcentajes. Requiere Python 3.
-
-Para ejecutarla desde la carpeta del repositorio:
-
-```bash
-python calculadora.py
-```
-
-Selecciona una opción del menú e ingresa los dos números solicitados. Para calcular un porcentaje, selecciona la opción `5`; por ejemplo, ingresa `200` como primer número y `15` como segundo para obtener `30.0`.
-
-La división entre cero muestra un mensaje de error.
+Los módulos requieren Python 3 y no usan dependencias externas.
 
 ## Diagrama del flujo de ramas
 
