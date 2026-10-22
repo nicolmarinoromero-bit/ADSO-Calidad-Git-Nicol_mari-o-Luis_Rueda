@@ -13,6 +13,17 @@ Aplicar prácticas de aseguramiento de calidad mediante el uso colaborativo de G
 
 La guía propone el formato `ADSO-Calidad-Git-[Pareja]` para el nombre del repositorio. Este equipo usa **ADSO-Calidad-Git-Nicol_mari-o-Luis_Rueda**.
 
+## Módulo de registro
+
+El archivo `registro.py` implementa el registro de usuarios en memoria. Valida que el documento tenga al menos seis dígitos, verifica el formato del correo y evita documentos duplicados.
+
+```python
+from registro import registrar_usuario
+
+usuarios = {}
+registrar_usuario(usuarios, "123456", "Ana Pérez", "ana@example.com")
+```
+
 ## Actividades requeridas
 
 1. Configurar un `.gitignore` que excluya registros, binarios, archivos temporales, entornos virtuales y archivos sensibles como `.env`.
